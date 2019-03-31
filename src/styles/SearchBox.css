@@ -1,0 +1,31 @@
+.nav-bar-ml{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffE600;
+}
+
+.nav-bar-box-ml{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 80%;
+}
+
+.navbar-logo{
+  width: 40px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.search-button:before {
+    background: url("../images/ic_Search.png") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    color: #fff;
+    height: 20px;
+    margin-right: 2px;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 20px;
+}
