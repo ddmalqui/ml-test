@@ -18,6 +18,10 @@ class DetailsProduct extends Reflux.Component {
     this.storeKey = ['dataP','details'];
   }
 
+  formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+
   componentDidMount(){
     Actions.findProduct(this.state.id_product);
     Actions.findDetails(this.state.id_product);
@@ -30,34 +34,31 @@ if (this.state.dataP.attributes != null){
     var objatt =  obj[Object.keys(obj)[0]].value_name;
   }
     return (
-        <div className="container">
-          <div className="row">
-               <div className="col-6">
-                    <img src={this.state.dataP.thumbnail} />
+<div key={this.state.search}  className="container pb-5 mb-2">
+        <div className="categorias-relacionadas">
+        Categoria1 > Categoria2 > Categoria3 
+        </div>
+       <div className="cart-item">
+        <div className="row details-cont">
+          <div className="col-6">
+                <div className="cart-item-product-big">
+                <img src={this.state.dataP.thumbnail} className="thumbnail-big" alt="Product" />
                 </div>
-                <div className="col-6">
-                    <h5><small>
-                      {objatt} ({this.state.dataP.sold_quantity} ventas)</small></h5>
-        
-                    <h3> {this.state.dataP.title}</h3>    
-        
-                    <h3>${this.state.dataP.price}</h3> 
-                    {this.state.details.plain_text}            
-        
-                    <div>
-                        <button className="btn btn-success">Comprar</button>
-                    </div>                                        
-                </div>                              
-        
-                <div className="col-xs-9">
-                    {this.state.details.plain_text}
                 </div>
-                </div>    
-            </div>
-
-        // 
-        //    
-        //
+                <div className="col-5">
+                  {objatt} - {this.state.dataP.sold_quantity} vendidos
+                <div className="cart-item-product-info">
+                <span className='Product-title'>{this.state.dataP.title}</span>
+                    <h4 className="Product-Price">$ {this.state.dataP.price}</h4>
+                    </div>
+                </div>
+        </div>
+         <div className="details-cont-desc">
+        <h4>Descripcion del Producto</h4>
+        {this.state.details.plain_text}
+        </div>  
+    </div>
+    </div>
 
     );
  

@@ -17,6 +17,10 @@ class Products extends Component {
     }	
 	}
 
+ formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+}
+
   render() {
         return (
        <div className="cart-item d-md-flex justify-content-between">
@@ -26,8 +30,8 @@ class Products extends Component {
                 <img src={this.props.thumbnail} className="thumbnail" alt="Product" />
                 </div>
                 <div className="cart-item-product-info">
-                    <h4 className="cart-item-product-title">$ {this.props.price}</h4>
-                    <span><strong>{this.props.id}</strong></span>
+                    <h4 className="Product-Price">$ {this.formatNumber(this.props.price)}</h4>
+                    <span className='Product-title'>{this.props.title}</span>
                 </div>
             </Link>
         </div>

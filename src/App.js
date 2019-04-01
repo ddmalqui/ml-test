@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div>
+      <div className="AppBackground">
         <SearchBox />
         <Route path="/search/:q" component={SearchResult} />
         <Route exact path="/"/> 

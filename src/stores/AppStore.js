@@ -9,15 +9,15 @@ class AppStore extends Reflux.Store {
 		this.state = {
 			data:[],
 			details:[],
-			dataP:[]		
+			dataP:[],
+			categories:[]		
 		}
 	}
 
 	findProducts(q){
-		console.log('pasa por appSttore')
 		const self = this;
-		//const dir = 'https://reqres.in/api/users?page=2';
-		const dir = "https://api.mercadolibre.com/sites/MLA/search?q=​'"+q+"'&limit=4";
+		const dir = "https://api.mercadolibre.com/sites/MLA/search?q=​'".concat(q,"'&limit=4");
+		//const dir = "https://api.mercadolibre.com/sites/MLA/search?q='hola'&limit=4";
 		Http.get(dir)
 		.then((respose) => {self.setState({data:respose.results})});
 	}

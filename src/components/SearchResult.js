@@ -2,7 +2,7 @@ import React from 'react';
 import Reflux from 'reflux';
 import AppStore from '../stores/AppStore';
 import Actions from '../actions/Actions'
-import '../styles/DetailsProduct.css';
+import '../styles/SearchResult.css';
 import PropTypes from 'prop-types';
 
 
@@ -16,7 +16,7 @@ class SearchResult extends Reflux.Component {
       search : this.props.match.params.q
     };
     this.store = AppStore;
-    this.storeKey = ['data'];
+    this.storeKey = ['data','categories'];
   }
 
   componentDidMount(){
@@ -25,7 +25,6 @@ class SearchResult extends Reflux.Component {
 
   componentWillReceiveProps(nextProps, nextContext){
     Actions.findProducts(nextProps.match.params.q);
-
   } 
 
   render() {
@@ -39,12 +38,14 @@ class SearchResult extends Reflux.Component {
               thumbnail={cv.thumbnail} 
               city_name={cv.address.city_name}
             />
-
       });
+
+   //let names = this.state.categories.map( (cv, index,array) => `${cv.name} >`).join(' ');
+     console.log(this.state.categories);  
     return (
         <div key={this.state.search}  className="container pb-5 mb-2">
         <div className="categorias-relacionadas">
-        categorias > categorias > categorias 
+        Categoria1 > Categoria2 > Categoria3 
         </div>
         {prod}
         </div>

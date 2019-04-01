@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/SearchBox.css'
 import {Link} from 'react-router-dom';
+import logo from '../Logo_ML.png'; // with import
+
+
+
 
 
 import SearchResult from '../components/SearchResult'
@@ -31,16 +35,20 @@ class SearchBox extends Component {
         <div className="nav-bar-box-ml" role="navigation">
           <form onSubmit={this.handleSubmit}>
             <div className="form-row">
-              <a href="/" className="col-2">
-                <img className="navbar-logo" src="Logo_ML.png" alt="Logo"/>
+              <a href="/" className="col-2 text-right">
+                <img className="navbar-logo" src={logo} alt="Logo"/>
               </a>
-              <div className="col-8 form-inline" >
+              <div className="col-8" >
+              <div className="form-row">
+                <div className="col-11 pr-0 " >
                 <input value={this.state.q} onChange={this.handleChange} type="text" className="form-control" placeholder="Nunca dejes de Buscar" />
-                 <div className="input-group-append">
-                    <Link to={"/search/".concat(this.state.q)}>
-                    <button className="search-button"><i className="fa fa-search"></i></button>
-                     </Link>
-                  </div>
+                </div>
+                <div className="col-1 pl-0">
+                <Link to={"/search/".concat(this.state.q)}>
+                  <button className="search-button"><i className="fa fa-search"></i></button>
+                </Link>
+                </div>
+                </div>
               </div>
             </div>
           </form>
