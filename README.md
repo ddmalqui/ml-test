@@ -2,9 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## pages (example):
 
-http://localhost:3000/
-http://localhost:3000/search/apple
-http://localhost:3000/details-product/MLA653282516
+http://localhost:3000/ <br>
+http://localhost:3000/search/apple <br>
+http://localhost:3000/details-product/MLA653282516 <br>
 
 
 ## Available Scripts
