@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## pages (example):
+## Pages (Example):
 
 http://localhost:3000/ <br>
 http://localhost:3000/search/apple <br>
