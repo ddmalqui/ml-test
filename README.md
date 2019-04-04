@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Pages (Example):
+
+http://localhost:3000/ <br>
+http://localhost:3000/items?search=apple <br>
+http://localhost:3000/details-product/MLA653282516 <br>
+
+
 ## Available Scripts
 
 In the project directory, you can run:
