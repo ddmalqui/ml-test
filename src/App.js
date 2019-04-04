@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router } from "react-router-dom";
 import './App.css';
+import queryString from 'query-string';
+
 
 import SearchBox from './components/SearchBox'
 import SearchResult from './components/SearchResult'
@@ -14,7 +16,8 @@ class App extends Component {
       <Router>
       <div className="AppBackground">
         <SearchBox />
-        <Route path="/search/:q" component={SearchResult} />
+        <Route path="/items" component={SearchResult} />
+        
         <Route exact path="/"/> 
         <Route path="/details-product/:id" component={DetailsProduct} /> 
       </div>

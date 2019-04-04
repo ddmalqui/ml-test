@@ -44,7 +44,7 @@ class SearchBox extends Component {
                 <input value={this.state.q} onChange={this.handleChange} type="text" className="form-control" placeholder="Nunca dejes de Buscar" />
                 </div>
                 <div className="col-1 pl-0">
-                <Link to={"/search/".concat(this.state.q)}>
+                <Link to={"/items?search=".concat(this.state.q)}>
                   <button className="search-button"><i className="fa fa-search"></i></button>
                 </Link>
                 </div>

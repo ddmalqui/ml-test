@@ -4,7 +4,7 @@ import AppStore from '../stores/AppStore';
 import Actions from '../actions/Actions'
 import '../styles/SearchResult.css';
 import PropTypes from 'prop-types';
-
+import queryString from 'query-string'
 
 import Products from '../components/Products';
 import SearchBox from '../components/SearchBox'
@@ -13,18 +13,20 @@ class SearchResult extends Reflux.Component {
   constructor(props){
     super(props);
     this.state = {
-      search : this.props.match.params.q
+      search : ''
     };
     this.store = AppStore;
     this.storeKey = ['data','categories'];
   }
 
   componentDidMount(){
-    Actions.findProducts(this.state.search);
+    const values = queryString.parse(this.props.location.search);
+    Actions.findProducts(values.search);
   }
 
   componentWillReceiveProps(nextProps, nextContext){
-    Actions.findProducts(nextProps.match.params.q);
+    const val = queryString.parse(nextProps.location.search);
+    Actions.findProducts(val.search);
   } 
 
   render() {
@@ -43,7 +45,7 @@ class SearchResult extends Reflux.Component {
    //let names = this.state.categories.map( (cv, index,array) => `${cv.name} >`).join(' ');
      console.log(this.state.categories);  
     return (
-        <div key={this.state.search}  className="container pb-5 mb-2">
+        <div className="container pb-5 mb-2">
         <div className="categorias-relacionadas">
         Categoria1 > Categoria2 > Categoria3 
         </div>
