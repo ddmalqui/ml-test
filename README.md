@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Pages (Example):
 
 http://localhost:3000/ <br>
-http://localhost:3000/search/apple <br>
+http://localhost:3000/items?search=apple <br>
 http://localhost:3000/details-product/MLA653282516 <br>
 
 
