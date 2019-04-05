@@ -19,6 +19,7 @@ class DetailsProduct extends Reflux.Component {
   }
 
   formatNumber(num) {
+    console.log(num);
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
 }
 
@@ -32,7 +33,11 @@ class DetailsProduct extends Reflux.Component {
 if (this.state.dataP.attributes != null){
     var obj = this.state.dataP.attributes;
     var objatt =  obj[Object.keys(obj)[0]].value_name;
+    var price = this.formatNumber(this.state.dataP.price);
   }
+
+  
+
     return (
 <div key={this.state.search}  className="container pb-5 mb-2">
         <div className="categorias-relacionadas">
@@ -48,9 +53,12 @@ if (this.state.dataP.attributes != null){
                 <div className="col-5">
                   {objatt} - {this.state.dataP.sold_quantity} vendidos
                 <div className="cart-item-product-info">
-                <span className='Product-title'>{this.state.dataP.title}</span>
-                    <h4 className="Product-Price">$ {this.state.dataP.price}</h4>
-                    </div>
+                <h1><strong>{this.state.dataP.title}</strong></h1>
+                    <h4 className="Product-Price-det">$ {price} </h4>
+                 </div>
+                 <div className='btn-comprar'>
+                  <button type="button" class="btn btn-primary btn-lg btn-block">Comprar</button>
+                 </div>
                 </div>
         </div>
          <div className="details-cont-desc">

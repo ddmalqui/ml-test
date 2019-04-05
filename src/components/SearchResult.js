@@ -22,6 +22,7 @@ class SearchResult extends Reflux.Component {
   componentDidMount(){
     const values = queryString.parse(this.props.location.search);
     Actions.findProducts(values.search);
+    
   }
 
   componentWillReceiveProps(nextProps, nextContext){

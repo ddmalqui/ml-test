@@ -19,7 +19,12 @@ class AppStore extends Reflux.Store {
 		const dir = "https://api.mercadolibre.com/sites/MLA/search?q=​'".concat(q,"'&limit=4");
 		//const dir = "https://api.mercadolibre.com/sites/MLA/search?q='hola'&limit=4";
 		Http.get(dir)
-		.then((respose) => {self.setState({data:respose.results})});
+		.then(function(respose) {
+   				self.setState({data:respose.results
+   					//,
+   				//categories:respose.filters[0].values[0].path_from_root
+   			})}
+   );
 	}
 
 	findProduct(id){

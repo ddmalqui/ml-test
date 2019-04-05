@@ -381,7 +381,14 @@
   font-size: 1.2em;
 }
 .Product-Price{
- font-size: 1.2em; 
+     font-size: 1.2em;
+}
+.Product-Price-det{
+     font-size: 3.2em;
+    margin-top: 19px;
+}
+.btn-comprar{
+    margin-top: 20px;
 }
 .product-card .product-title {
   margin-bottom: 8px;
