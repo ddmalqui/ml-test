@@ -6,6 +6,12 @@ http://localhost:3000/ <br>
 http://localhost:3000/items?search=apple <br>
 http://localhost:3000/details-product/MLA653282516 <br>
 
+## TODO
+
+categorias (no funciona siempre: respose.filters[0].values[0].path_from_root)<br>
+author (se necesitan permisos)<br>
+Animaciones (https://reacttraining.com/react-router/web/example/animated-transitions) <br>
+scss<br>
 
 ## Available Scripts
 
